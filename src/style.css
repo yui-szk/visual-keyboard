@@ -1,0 +1,86 @@
+.keyboard {
+
+  /* position: fixed=スクロールしてもキーボードが表示される */
+  position: fixed;
+
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 5px 0;
+  background-color: #5aa3b5;
+
+  /* offset-x | offset-y | blur-radius | color */
+  box-shadow: 0 0 50px #000;
+
+  /* user-select=要素選択の制御
+           :none=指定の要素内で選択を開始する際、テキストを選択できない*/
+  user-select: none;
+
+  /* 下からキーボードが出てくるアニメーション */
+  transition: bottom 0.4s;
+  height: 100px;
+}
+
+.keyboard--hidden {
+  bottom: -100%;
+}
+
+.keyboard__keys {
+  text-align: center;
+}
+
+.keyboard__key {
+  height: 45px;
+  width: 6%;
+  max-width: 90px;
+  margin: 3px;
+  border-radius: 4px;
+  border: none;
+  background: #85c8d8;
+  color: #fff;
+  
+  /* ルート要素の1.05倍 */
+  font-size: 1.05rem;
+  outline: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: top;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+  position: relative;
+}
+
+.keyboard__key--wide {
+  width: 12%;
+}
+
+.keyboard__key--extra-wide {
+  width: 36px;
+  max-width: 500px;
+}
+
+.keyboard__key:active {
+  background: #81c0cf;
+}
+
+.keyboard__key--activatable::after {
+  content: "";
+  top: 10px;
+  right: 10px;
+  /* 絶対位置指定 */
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #000;
+  border-radius: 50%;
+}
+
+.keyboard__key--active::after {
+  background: #93cbd9;
+}
+
+.keyboard__key--dark {
+  background: #000;
+}
