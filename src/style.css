@@ -1,10 +1,21 @@
-.keyboard {
+.use-keyboard-input {
+  display: block;
+  width: 60%;
+  height: 100px;
+  margin: 0 auto;
+}
 
+/* .use-keyboard-input::after {
+  color: #000;
+  content: "";
+  animation: blink 1s infinite;
+} */
+
+.keyboard {
   /* position: fixed=スクロールしてもキーボードが表示される */
   position: fixed;
-
   left: 0;
-  bottom: 0;
+  bottom: -50%;
   width: 100%;
   padding: 5px 0;
   background-color: #5aa3b5;
@@ -18,11 +29,14 @@
 
   /* 下からキーボードが出てくるアニメーション */
   transition: bottom 0.4s;
-  height: 100px;
 }
 
-.keyboard--hidden {
-  bottom: -100%;
+/* .use-keyboard-input:focus ~ .keyboard {
+  bottom: 0%;
+} */
+
+.keyboard--show {
+  bottom: 0;
 }
 
 .keyboard__keys {
@@ -38,7 +52,7 @@
   border: none;
   background: #85c8d8;
   color: #fff;
-  
+
   /* ルート要素の1.05倍 */
   font-size: 1.05rem;
   outline: none;
@@ -65,7 +79,7 @@
   background: #81c0cf;
 }
 
-.keyboard__key--activatable::after {
+.keyboard__key--can-activate::after {
   content: "";
   top: 10px;
   right: 10px;
